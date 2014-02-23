@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>商家管理系统</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#hide").click(function(){
+          $("#pic").hide();
+          $("#pic2").hide();
+        });
+      });
+    </script>
+    <script type="text/JavaScript"> 
+      function show_menu(num){
+        for(i=0;i<100;i++){
+          if(document.getElementById('li0'+i)){
+            document.getElementById('li0'+i).style.display='none';
+            document.getElementById('f0'+i).className='';
+           }
+        }
+        document.getElementById('li0'+num).style.display='block';
+        document.getElementById('f0'+num).className='left02down01_xia_li';
+      }
+      
+      function show_menuB(numB){
+        for(j=0;j<100;j++){
+           if(j!=numB){
+            if(document.getElementById('Bli0'+j)){
+            document.getElementById('Bli0'+j).style.display='none';
+            document.getElementById('Bf0'+j).style.background='url(/images/01.gif)';
+          }
+           }
+        }
+        if(document.getElementById('Bli0'+numB)){   
+          if(document.getElementById('Bli0'+numB).style.display=='block'){
+            document.getElementById('Bli0'+numB).style.display='none';
+           document.getElementById('Bf0'+numB).style.background='url(/images/01.gif)';
+          }else {
+            document.getElementById('Bli0'+numB).style.display='block';
+            document.getElementById('Bf0'+numB).style.background='url(/images/02.gif)';
+          }
+        }
+      }
+      
+      
+      var temp=0;
+      function show_menuC(){
+          if (temp==0){
+           document.getElementById('LeftBox').style.display='none';
+             document.getElementById('RightBox').style.marginLeft='0';
+           document.getElementById('Mobile').style.background='url(/images/center.gif)';
+           temp=1;
+          }else{
+          document.getElementById('RightBox').style.marginLeft='222px';
+            document.getElementById('LeftBox').style.display='block';
+          document.getElementById('Mobile').style.background='url(/images/center0.gif)';
+      
+           temp=0;
+            }
+         }
+    </script>
+  </head>
+  <body style="">
+    <div style="position: fixed; z-index: 100; width: 100%; height: 100%; text-align: center; display: none;" id="pic">
+      <img src="/images/show.jpg" style="margin-top: 30px;">
+      <br>
+      <button style="width: 120px; height: 25px; background: #660; line-height: 20px; color: #fff; text-align: center; border: none; margin-top: 10px; " id="hide">
+        关闭
+      </button>
+    </div>
+    <div style="position: fixed; z-index: 10; width: 100%; height: 100%; background: #000; opacity: 0.7; text-align: center; display: none;" id="pic2"></div>
+    <div class="header">
+      
+      
+      <a href="http://211.154.132.96:8090/mallms/userLogin">
+        <div class="header03">退出</div></a>
+        
+      <a href="http://211.154.132.96:8090/mallms/generateVersion">
+        <div class="header03">生成新版商家系统</div></a>
+      <div class="header01"></div>  
+      <div class="header01"></div>
+      <div class="header02">
+       合肥百大鼓楼名品中心管理系统
+      </div>
+    </div>
+    <div class="left" id="LeftBox">
+      <div class="left01">
+        <div class="left01_right"></div>
+        <div class="left01_left"></div>
+        <div class="left01_c">
+          管理员：hefeigulou
+        </div>
+      </div>
+      <div class="left02">
+        <div class="left02top">
+          <div class="left02top_right"></div>
+          <div class="left02top_left"></div>
+          <div class="left02top_c">
+            商家管理
+          </div>
+        </div>
+        <div class="left02down">
+          <div class="left02down01">
+            <a href="javascript:;" onclick="doSwitchAction(&#39;customertype?action=1&#39;,&#39;&#39;,&#39;商家分类&#39;,&#39;商家分类列表&#39;)">
+              商家分类</a>
+          </div>
+          <div class="left02down01">
+            <a href="javascript:;" onclick="doSwitchAction(&#39;customer?action=1&#39;, &#39;&#39;,&#39;商家管理&#39;,&#39;商家列表&#39;)">商家管理</a>
+          </div>
+        </div>
+      </div>
+      <div class="left02">
+        <div class="left02top">
+          <div class="left02top_right"></div>
+          <div class="left02top_left"></div>
+          <div class="left02top_c">
+            商品管理
+          </div>
+        </div>
+        <div class="left02down">
+          <div class="left02down01">
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/mallms/goodstype?action=1&#39;,&#39;&#39;,&#39;商品分类&#39;,&#39;商品分类列表&#39;)">商品分类</a>
+          </div>
+          <div class="left02down01">
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/mallms/goods?action=1&#39;,&#39;&#39;,&#39;商品管理&#39;,&#39;商品列表&#39;)">商品管理</a>
+          </div>
+        </div>
+      </div>
+      <div class="left02">
+        <div class="left02top">
+          <div class="left02top_right"></div>
+          <div class="left02top_left"></div>
+          <div class="left02top_c">
+            活动管理
+          </div>
+        </div>
+        <div class="left02down">
+          <div class="left02down01">
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/mallms/activity?action=1&#39;,&#39;&#39;,&#39;活动管理&#39;,&#39;活动列表&#39;)">活动管理</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rrcc" id="RightBox">
+      <div class="center" id="Mobile" onclick="show_menuC();"></div>
+      <div class="right" id="li010">
+        <div class="right01">
+          <img src="/images/04.gif">
+          <label id="rootName" style="display: none;">
+          </label>
+          <label id="parentMenu">商家分类 &gt; </label>
+          <span id="currWin">商家分类列表</span>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+    <div class="footer">
+      <span>技术支持：<a href="http://www.runrun.hk/">热望信息</a> </span><span>联系电话：400-103-0101</span>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,18 @@
+body, a{
+	font-family:"Times New Roman",Georgia,Serif;font-size:12px;margin:0;background:#f4f5eb;color:#000;
+}
+
+body{padding-left:4px}
+table{width:90%;border-left:solid 1px gray;border-top:solid 1px gray;margin:0px;}
+td{padding:2px 4px;height:20px;border-right:solid 1px gray;border-bottom:solid 1px gray;}
+thead th{height:26px;background-color:lightgray;border-right:solid 1px gray;border-bottom:solid 1px gray;}
+tbody td{height:20px;border-right:solid 1px gray;border-bottom:solid 1px gray;word-break:break-all}
+img{height:22px;cursor:pointer;}
+.labelText{background-color:lightgray; width:20%}
+.inputArea{background-color:white; width:30%}
+.inputArea input{width:75%; padding-left:3px;}
+.inputArea textarea{width:95%; padding-left:3px;}
+select{width:80%}
+.hover{background-color:AliceBlue;}
+.dateTableDIV table{width:100%}
+img{border:1px solid lightgray}
