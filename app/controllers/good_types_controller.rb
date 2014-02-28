@@ -1,0 +1,2 @@
+class GoodTypesController < ApplicationController
+end

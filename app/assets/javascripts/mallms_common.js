@@ -22,11 +22,11 @@ function switchMenuLabel(rootName,parentName,menuName){
 
 function doSwitchAction(url,rootName,parentName,menuName){
 	switchMenuLabel(rootName,parentName,menuName);
-	window.top['ifrcenter'].location.href=url;
+	window.location.href=url;
 }
 
 function doSwitchAction2(url){
-	window.top['ifrcenter'].location.href=url;
+	window.location.href=url;
 }
 
 function homepagePicShow(){

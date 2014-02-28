@@ -1,10 +1,11 @@
 Mallms::Application.routes.draw do
+  resources :customer_types
   resources :customers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'customers#index'
+  root 'customer_types#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

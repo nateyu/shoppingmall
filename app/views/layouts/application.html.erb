@@ -37,10 +37,10 @@
         if(document.getElementById('Bli0'+numB)){   
           if(document.getElementById('Bli0'+numB).style.display=='block'){
             document.getElementById('Bli0'+numB).style.display='none';
-           document.getElementById('Bf0'+numB).style.background='url(/images/01.gif)';
+           document.getElementById('Bf0'+numB).style.background='url(/assets/01.gif)';
           }else {
             document.getElementById('Bli0'+numB).style.display='block';
-            document.getElementById('Bf0'+numB).style.background='url(/images/02.gif)';
+            document.getElementById('Bf0'+numB).style.background='url(/assets/02.gif)';
           }
         }
       }
@@ -51,12 +51,12 @@
           if (temp==0){
            document.getElementById('LeftBox').style.display='none';
              document.getElementById('RightBox').style.marginLeft='0';
-           document.getElementById('Mobile').style.background='url(/images/center.gif)';
+           document.getElementById('Mobile').style.background='url(/assets/center.gif)';
            temp=1;
           }else{
           document.getElementById('RightBox').style.marginLeft='222px';
             document.getElementById('LeftBox').style.display='block';
-          document.getElementById('Mobile').style.background='url(/images/center0.gif)';
+          document.getElementById('Mobile').style.background='url(/assets/center0.gif)';
       
            temp=0;
             }
@@ -65,7 +65,7 @@
   </head>
   <body style="">
     <div style="position: fixed; z-index: 100; width: 100%; height: 100%; text-align: center; display: none;" id="pic">
-      <img src="/images/show.jpg" style="margin-top: 30px;">
+      <%= image_tag "show.jpg"%>
       <br>
       <button style="width: 120px; height: 25px; background: #660; line-height: 20px; color: #fff; text-align: center; border: none; margin-top: 10px; " id="hide">
         关闭
@@ -104,11 +104,11 @@
         </div>
         <div class="left02down">
           <div class="left02down01">
-            <a href="javascript:;" onclick="doSwitchAction(&#39;customertype?action=1&#39;,&#39;&#39;,&#39;商家分类&#39;,&#39;商家分类列表&#39;)">
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/customer_types&#39;,&#39;&#39;,&#39;商家分类&#39;,&#39;商家分类列表&#39;)">
               商家分类</a>
           </div>
           <div class="left02down01">
-            <a href="javascript:;" onclick="doSwitchAction(&#39;customer?action=1&#39;, &#39;&#39;,&#39;商家管理&#39;,&#39;商家列表&#39;)">商家管理</a>
+            <a href="javascript:;" onclick="doSwitchAction(&#39;customers&#39;, &#39;&#39;,&#39;商家管理&#39;,&#39;商家列表&#39;)">商家管理</a>
           </div>
         </div>
       </div>
@@ -148,13 +148,15 @@
       <div class="center" id="Mobile" onclick="show_menuC();"></div>
       <div class="right" id="li010">
         <div class="right01">
-          <img src="/images/04.gif">
+          <%= image_tag "04.gif" %>
           <label id="rootName" style="display: none;">
           </label>
           <label id="parentMenu">商家分类 &gt; </label>
           <span id="currWin">商家分类列表</span>
         </div>
-        <%= yield %>
+        <div id="main-content">
+          <%= yield %>
+        </div>
       </div>
     </div>
     <div class="footer">

@@ -13,17 +13,30 @@
 
 ActiveRecord::Schema.define(version: 20140126085407) do
 
+  create_table "CUSTOMER", force: true do |t|
+    t.string   "name"
+    t.integer  "typeid"
+    t.text     "address"
+    t.string   "phone"
+    t.text     "description"
+    t.datetime "createDate"
+    t.datetime "lastupdate"
+    t.text     "logo1url"
+    t.text     "logo2url"
+    t.boolean  "obsolete"
+    t.string   "homepageLoc"
+    t.integer  "mallid"
+  end
+
+  create_table "CUSTOMERTYPE", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "status"
+    t.datetime "createDate"
+    t.integer  "mallid"
+  end
+
   create_table "activities", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "customer_types", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "customers", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
