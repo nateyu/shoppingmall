@@ -10,6 +10,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.datetime :lastupdate
       t.text :logo1url
       t.text :logo2url
+      t.text :posterUrl
       t.boolean :obsolete
       t.string :homepageLoc
       t.integer :mallid

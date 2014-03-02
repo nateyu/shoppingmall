@@ -1,6 +1,28 @@
 Mallms::Application.routes.draw do
   resources :customer_types
-  resources :customers
+  resources :customers do
+    collection do
+      post 'search'
+    end
+  end
+  
+  resources :goods_types do
+    collection do
+      post 'search'
+    end
+  end
+
+  resources :goods do
+    collection do
+      post 'search'
+    end
+  end
+
+  resources :activities do
+    collection do
+      post 'search'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

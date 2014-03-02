@@ -1,0 +1,93 @@
+<tbody>
+  <tr>
+    <td class="labelText">
+      <%= form.label :name, '商家名称' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :name %>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :status, '状态' %>
+    </td>
+    <td class="">
+      <%= form.radio_button("obsolete", "1", { :checked => @customer.obsolete || @customer.obsolete.nil? }) %>显示 &nbsp;&nbsp;&nbsp;&nbsp;
+      <%= form.radio_button("obsolete", "0", { :checked => !(@customer.obsolete || @customer.obsolete.nil?) }) %>隐藏
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :typeid, '商家分类' %>
+    </td>
+    <td class="inputArea">
+      <%= form.select :typeid, CustomerType.all.collect {|p| [ p.name, p.id ] } %>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :phone, '联系电话' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :phone %>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :address, '商家位置' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :address %>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :logo2url, '商家地图' %>
+    </td>
+    <td colspan="3" class="inputArea">
+      <%= form.text_field :logo2url %>
+      <!-- <input type="file" id="logo2Url" name="logo2Url" title="只能上传png/jpg的图片，宽度*高度=56*68"> -->
+      <font color="red">*</font>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :description, '商家介绍' %>
+    </td>
+    <td colspan="3" class="inputArea">
+      <%= form.text_area :description, rows: 3%>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :logo1url, '商家Logo(197*173px)' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :logo1url %>
+      <!-- <input type="file" id="logo1Url" name="logo1Url" title="只能上传png/jpg的图片，宽度*高度=197*173"> -->
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :logo1Url, '首界面标志' %>
+    </td>
+    <td class="">
+      <select id="homepageLoc" name="homepageLoc" style="width: 50%">
+        <option value=""></option>
+      </select>
+      <input type="button" onclick="parent.window.homepagePicShow();" value="示意图">
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :posterUrl, '商家海报(640*960px)' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :posterUrl %>
+      <font color="red"></font>
+    </td>
+    <td></td>
+    <td></td>
+  </tr> 
+</tbody>

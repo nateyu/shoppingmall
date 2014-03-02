@@ -1,0 +1,105 @@
+<br>
+    <form action="activity.html" method="POST">
+      <table border="0" cellspacing="0" cellpadding="0" style="border: none; margin-bottom: 10px;">
+        <tbody><tr>
+          <td style="border: none;">
+            商家：
+            <select id="customerId" name="customerId" style="width: 100px">
+              
+              <option value=""></option>
+              <option value="00000000">整个商场</option>
+              
+                
+                  <option value="gv211oextvmabbxd">
+                    莱茵
+                  </option>
+
+            </select>
+          </td>
+          <td style="border: none;">
+            首界面标志：
+            <select style="width: 100px" name="homepageLoc">
+              <option value=""></option>
+              <option value="all">ALL</option>
+                  <option value="A1">
+                    A1
+                  </option>
+            </select>
+          </td>
+          <td style="border: none;">
+            活动名称：
+            <input name="name" type="text">
+          </td>
+          <td style="border: none;">
+            活动起始日期：
+            <input type="text" id="startDate" style="cursor: pointer; width: 100px;" name="startDate" value="" title="开始日期">
+          </td>
+          <td style="border: none">
+            活动结束日期：
+            <input type="text" id="endDate" style="cursor: pointer; width: 100px;" name="endDate" value="" title="结束日期">
+            <input type="submit" value="查询">
+          </td>
+        </tr>
+      </tbody></table>
+    </form>
+    <table border="0" id="listTable" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr style="border-bottom: 0px">
+          <th style="text-align: left; padding-left: 8px; font-size: 14px; background-color: darkgray; color: white; border-right: 0px; border-bottom: 0px" colspan="10">
+            活动列表
+          </th>
+        </tr>
+        <tr>
+          <th width="150">
+            活动名称
+          </th>
+          <th width="100">
+            商家
+          </th>
+          <th width="120">
+            活动起始日期
+          </th>
+          <th width="120">
+            活动结束日期
+          </th>
+          <th width="120">
+            首界面标志
+          </th>
+          <th width="80">
+            操作
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        
+              <tr>
+                <td class="">
+                  遇见 爱
+                </td>
+                <td class="">
+                  整个商场
+                  
+                </td>
+                <td class="">
+                  2014-02-14
+                </td>
+                <td class="">
+                  2014-02-16
+                </td>
+                <td class="">
+                  A1
+                </td>
+                <td class="">
+                  <a href="http://211.154.132.96:8090/mallms/activity?action=4&id=knu1263srq1jzuii">修改</a>
+                  <a href="javascript:void(0);" onclick="deleteActivity(&#39;/mallms/activity?action=6&amp;id=knu1263srq1jzuii&#39;,&#39;遇见 爱&#39;);">删除</a>
+                </td>
+              </tr>
+            
+      </tbody>
+    </table>
+    <div style="width: 90%">
+      <a href="javascript:;" onclick="doSwitchAction(&#39;/mallms/activity?action=2&amp;customerId=&#39;,&#39;&#39;,&#39;活动管理&#39;,&#39;添加活动&#39;)"><input type="button" value="新增活动" style="margin-top: 10px; float: right">
+      </a>
+    </div>
+    <div id="dialog" title="活动管理">
+    </div>

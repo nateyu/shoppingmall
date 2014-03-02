@@ -40,9 +40,10 @@ body,html{height:100%;}
 
 
 /*----right---------------------------*/
-.right{width:auto;height:90%;margin-left:20px!important;margin-left:10px;border:1px solid #b4b4b4;background:#fff; padding:5px; }
+.right{width:auto;min-height:90%;margin-left:20px!important;margin-left:10px;border:1px solid #b4b4b4;background:#fff; padding:5px; }
 .right span{color:#666;}
 .right01{padding-left:10px;margin:9px 0;} 
+#main-content {background-color:#f4f5eb;}
 
 .new_b{ margin-top:20px; float:right}
 

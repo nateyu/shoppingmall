@@ -1,0 +1,98 @@
+<tbody>
+  <tr>
+    <td class="labelText">
+      <%= form.label :name, '商品名称' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :name %>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :customerId, '商家' %>
+    </td>
+    <td class="inputArea">
+      <%= form.select :customerId, Customer.all.collect {|p| [ p.name, p.id ] } %>
+      <font color="red">*</font>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :price, '商家' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :price %>
+    </td>
+    <td class="labelText">
+      <%= form.label :discountprice, '优惠价' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :discountprice %>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :homepageLoc, '首界面标志' %>
+    </td>
+    <td>
+      <select id="homepageLoc" name="homepageLoc" style="width: 50%">
+        <option value=""></option>
+      </select>
+      <input type="button" onclick="parent.window.homepagePicShow();" value="示意图">
+    </td>
+    <td class="labelText">
+      <%= form.label :goodstypeId, '商品分类' %>
+    </td>
+    <td>
+      <%= form.select :goodstypeId, GoodsType.all.collect {|p| [ p.name, p.id ] } %>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :description, '商品描述' %>
+    </td>
+    <td colspan="3" class="inputArea">
+      <%= form.text_area :description %>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :goodspic1url, '商品图片一(宽度320px~640px)' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :goodspic1url %>
+    </td>
+    <td class="labelText">
+      <%= form.label :goodspic2url, '商品图片二(宽度320px~640px)' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :goodspic2url %>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :goodspic3url, '商品图片三(宽度320px~640px)' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :goodspic3url %>
+    </td>
+    <td class="labelText">
+      <%= form.label :goodspic4url, '商品图片四(宽度320px~640px)' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :goodspic4url %>
+    </td>
+  </tr>
+  <tr>
+    <td class="labelText">
+      <%= form.label :goodspic5url, '商品图片五(宽度320px~640px)' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :goodspic5url %>
+    </td>
+  </tr>
+</tbody>

@@ -1,0 +1,53 @@
+<br>
+<%= form_tag '/goods_types/search' do %>
+  <table border="0" cellspacing="0" cellpadding="0" style="border: none; margin-bottom: 10px; width: 50%;">
+    <tbody>
+      <tr>
+        <td style="border: none;"><%= label_tag '[goods_type][name]', '名称:' %></td>
+        <td style="border: none;"><%= text_field_tag '[goods_type][name]' %></td>
+        <td style="border: none;"><%= label_tag '[goods_type][category]', '类型:' %></td>
+        <td style="border: none;">
+          <%= select_tag '[goods_type][category]', options_for_select(GoodsType::CATEGORIES), include_blank: true %>
+        </td>
+        <td style="border: none;">
+          <%= submit_tag '查询' %>
+        </td>
+        <td style="border: none">
+          &nbsp;
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
+<table border="0" id="listTable" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding-left: 8px; font-size: 14px; background-color: darkgray; color: white" colspan="6">
+        商品分类列表
+      </th>
+    </tr>
+    <tr>
+      <th width="100" height="30">分类名称</th>
+      <th width="100">权重</th>
+      <th width="100">状态</th>
+      <th width="100">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @goods_types.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.weight %></td>
+        <td><%= i.status ? '显示' : '隐藏' %></td>
+        <td><a href="<%= edit_goods_type_path i %>">修改</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div style="width: 90%">
+  <input type="button" value="新增分类" onclick="doSwitchAction2(&#39;/goods_types/new&#39;)" style="margin-top: 10px; float: right"> 
+</div>
+<div id="dialog" title="商品分类管理">
+</div>

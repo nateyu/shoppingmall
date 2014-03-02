@@ -108,7 +108,7 @@
               商家分类</a>
           </div>
           <div class="left02down01">
-            <a href="javascript:;" onclick="doSwitchAction(&#39;customers&#39;, &#39;&#39;,&#39;商家管理&#39;,&#39;商家列表&#39;)">商家管理</a>
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/customers&#39;, &#39;&#39;,&#39;商家管理&#39;,&#39;商家列表&#39;)">商家管理</a>
           </div>
         </div>
       </div>
@@ -122,10 +122,10 @@
         </div>
         <div class="left02down">
           <div class="left02down01">
-            <a href="javascript:;" onclick="doSwitchAction(&#39;/mallms/goodstype?action=1&#39;,&#39;&#39;,&#39;商品分类&#39;,&#39;商品分类列表&#39;)">商品分类</a>
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/goods_types&#39;,&#39;&#39;,&#39;商品分类&#39;,&#39;商品分类列表&#39;)">商品分类</a>
           </div>
           <div class="left02down01">
-            <a href="javascript:;" onclick="doSwitchAction(&#39;/mallms/goods?action=1&#39;,&#39;&#39;,&#39;商品管理&#39;,&#39;商品列表&#39;)">商品管理</a>
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/goods&#39;,&#39;&#39;,&#39;商品管理&#39;,&#39;商品列表&#39;)">商品管理</a>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@
         </div>
         <div class="left02down">
           <div class="left02down01">
-            <a href="javascript:;" onclick="doSwitchAction(&#39;/mallms/activity?action=1&#39;,&#39;&#39;,&#39;活动管理&#39;,&#39;活动列表&#39;)">活动管理</a>
+            <a href="javascript:;" onclick="doSwitchAction(&#39;/activities&#39;,&#39;&#39;,&#39;活动管理&#39;,&#39;活动列表&#39;)">活动管理</a>
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@
           <label id="parentMenu">商家分类 &gt; </label>
           <span id="currWin">商家分类列表</span>
         </div>
-        <div id="main-content">
+        <div id="main-content" class="main-content">
           <%= yield %>
         </div>
       </div>

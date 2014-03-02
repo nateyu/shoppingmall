@@ -1,0 +1,67 @@
+<br>
+<%= form_tag '/goods/search' do %>
+  <table border="0" cellspacing="0" cellpadding="0" style="border: none; margin-bottom: 10px;width: 60%;">
+    <tbody>
+      <tr>
+      <td style="border: none;">
+        商品名称：<br/>
+        <%= text_field_tag "[good][name]" %>
+      </td>
+      <td style="border: none;">
+        商家：
+        <%= select_tag '[good][customerId]', options_from_collection_for_select(Customer.all, 'id', 'name'), include_blank: true %>
+      </td>
+      <td style="border: none;">
+        首界面标志：
+        <%= select_tag '[good][homepageLoc]', options_from_collection_for_select(Good.select(:homepageLoc), 'homepageLoc', 'homepageLoc'), include_blank: true %>
+      </td>
+      <td style="border: none;">
+        <%= submit_tag "查询" %>
+      </td>
+      <td style="border: none">
+        &nbsp;
+      </td>
+    </tr>
+    </tbody>
+  </table>
+<% end %>
+
+<table border="0" id="listTable" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding-left: 8px; font-size: 14px; background-color: darkgray; color: white" colspan="10">
+        商品列表
+      </th>
+    </tr>
+    <tr>
+      <th width="100">商品名称</th>
+      <th width="100">商家</th>
+      <th width="80">原价</th>
+      <th width="80">优惠价</th>
+      <th width="80">首界面标志</th>
+      <th width="80">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @goods.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.customer.name %></td>
+        <td><%= i.price %></td>
+        <td><%= i.discountprice %></td>
+        <td><%= i.homepageLoc %></td>
+        <td>
+          <%= link_to '修改', edit_good_path(i) %>
+          <%= link_to("删除", good_path(i), method: :delete, data: { confirm: '您确定要删除吗?' } ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div style="width: 90%">
+  <a href="javascript:;" onclick="doSwitchAction(&#39;/goods/new&#39;,&#39;&#39;,&#39;商品管理&#39;,&#39;添加商品&#39;)"><input type="button" value="新增商品" style="margin-top: 10px; float: right">
+  </a>
+</div>
+<div id="dialog" title="商品管理">
+</div>

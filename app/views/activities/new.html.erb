@@ -1,0 +1,102 @@
+<form name="addActivity" action="http://211.154.132.96:8090/mallms/activity?action=3" method="post" enctype="multipart/form-data" onsubmit="return checkForm()">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr><th style="text-align: left; padding-left: 8px; font-size: 14px; background-color: darkgray; color: white" colspan="4">
+            添加活动
+          </th>
+        </tr></thead>
+        <tbody><tr>
+          <td class="labelText">
+            <label for="name" id="lblname">
+              活动名称
+            </label>
+          </td>
+          <td class="inputArea">
+            <input type="text" id="name" name="name" maxlength="127" >
+            <font color="red">*</font>
+          </td>
+          <td class="labelText">
+            <label for="customerId" id="lblcustomerId">
+              商家
+            </label>
+          </td>
+          <td class="inputArea">
+            <select id="customerId" name="customerId">
+              <option value="00000000">整个商场</option>
+            </select>
+            <font color="red">*</font>
+          </td>
+        </tr>
+        <tr>
+          <td class="labelText">
+            <label for="startDate" id="lblstartDate">
+              活动起始日期
+            </label>
+          </td>
+          <td class="inputArea">
+            <input type="text" readonly="" style="cursor: pointer" id="startDate" name="startDate" title="开始日期">
+            <font color="red">*</font>
+          </td>
+          <td class="labelText">
+            <label for="endDate" id="lblendDate">
+              活动结束日期
+            </label>
+          </td>
+          <td class="inputArea">
+            <input type="text" readonly="" style="cursor: pointer" id="endDate" name="endDate" title="结束日期">
+            <font color="red">*</font>
+          </td>
+        </tr>
+        <tr>
+          <td class="labelText">
+            <label for="posterUrl" id="lblhomepageLoc">
+              首界面标志
+            </label>
+          </td>
+          <td>
+            <select id="homepageLoc" name="homepageLoc" style="width: 50%">
+              <option value=""></option>
+              
+            </select>
+            <input type="button" id="homepagePic" onclick="parent.window.homepagePicShow();" value="示意图">
+          </td>
+        </tr>
+        <tr>
+          <td class="labelText">
+            <label for="description" id="lbldescription">
+              活动介绍
+            </label>
+          </td>
+          <td colspan="3" class="inputArea">
+            <textarea id="description" name="description" rows="3"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="labelText">
+            <label for="logoUrl" id="lbllogoUrl">
+              活动Logo(640*234px)
+            </label>
+          </td>
+          <td colspan="3" class="inputArea">
+            <input type="file" id="logoUrl" name="logoUrl">
+            <font color="red">*</font>
+          </td>
+        </tr>
+        <tr>
+          <td class="labelText">
+            <label for="posterUrl" id="lblposterUrl">
+              海报图片
+            </label>
+          </td>
+          <td colspan="3" class="inputArea">
+            <input type="file" id="posterUrl" name="posterUrl">
+            <font color="red">*</font>
+          </td>
+        </tr>
+
+      </tbody></table>
+      <br>
+      <input type="submit" value="保存">
+      <input type="reset" value="重置">
+      <span style="color: red;" id="msgContent"></span>
+    </form>

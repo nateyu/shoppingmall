@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126085407) do
+ActiveRecord::Schema.define(version: 20140301133352) do
 
   create_table "CUSTOMER", force: true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140126085407) do
     t.boolean  "obsolete"
     t.string   "homepageLoc"
     t.integer  "mallid"
+    t.text     "posterUrl"
   end
 
   create_table "CUSTOMERTYPE", force: true do |t|
@@ -36,9 +37,33 @@ ActiveRecord::Schema.define(version: 20140126085407) do
     t.integer  "mallid"
   end
 
+  create_table "GOODS", force: true do |t|
+    t.string  "name"
+    t.integer "customerId"
+    t.decimal "price",         precision: 15, scale: 2
+    t.decimal "discountprice", precision: 15, scale: 2
+    t.text    "homepageLoc"
+    t.integer "goodstypeId"
+    t.integer "mallid"
+    t.date    "createDate"
+    t.text    "description"
+    t.text    "goodspic1url"
+    t.text    "goodspic2url"
+    t.text    "goodspic3url"
+    t.text    "goodspic4url"
+    t.text    "goodspic5url"
+  end
+
   create_table "activities", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "goods_types", force: true do |t|
+    t.string  "name"
+    t.boolean "status"
+    t.integer "weight"
+    t.integer "category"
   end
 
 end

@@ -26,8 +26,4 @@ class CustomerTypesController < ApplicationController
     else  render 'new'
     end
   end
-
-  def destory
-    
-  end
 end

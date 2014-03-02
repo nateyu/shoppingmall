@@ -1,15 +1,15 @@
-<%= form_for @customer_type , url: {action: "update"} do |f| %>
+<%= form_for @customer, url: {action: "update"} do |f| %>
   <table border="0" cellspacing="0" cellpadding="0">
     <thead>
       <tr>
         <th style="text-align: left; padding-left: 8px; font-size: 14px; background-color: darkgray; color: white" colspan="4">
-            编辑商家
+            添加商家分类
         </th>
       </tr>
     </thead>
     <%= render partial: 'form_fields', locals: {form: f} %>
   </table>
-  
+
   <%= f.submit '保存' %>
   <input type="reset" value="重置">
   <span style="color: red;" id="msgContent"></span>
