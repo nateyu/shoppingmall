@@ -18,7 +18,7 @@
 
   <tr>
     <td class="labelText">
-      <%= form.label :price, '商家' %>
+      <%= form.label :price, '原价' %>
     </td>
     <td class="inputArea">
       <%= form.text_field :price %>
@@ -63,13 +63,13 @@
       <%= form.label :goodspic1url, '商品图片一(宽度320px~640px)' %>
     </td>
     <td class="inputArea">
-      <%= form.text_field :goodspic1url %>
+      <%= form.file_field :goodspic1url %>
     </td>
     <td class="labelText">
       <%= form.label :goodspic2url, '商品图片二(宽度320px~640px)' %>
     </td>
     <td class="inputArea">
-      <%= form.text_field :goodspic2url %>
+      <%= form.file_field :goodspic2url %>
     </td>
   </tr>
 
@@ -78,13 +78,13 @@
       <%= form.label :goodspic3url, '商品图片三(宽度320px~640px)' %>
     </td>
     <td class="inputArea">
-      <%= form.text_field :goodspic3url %>
+      <%= form.file_field :goodspic3url %>
     </td>
     <td class="labelText">
       <%= form.label :goodspic4url, '商品图片四(宽度320px~640px)' %>
     </td>
     <td class="inputArea">
-      <%= form.text_field :goodspic4url %>
+      <%= form.file_field :goodspic4url %>
     </td>
   </tr>
   <tr>
@@ -92,7 +92,7 @@
       <%= form.label :goodspic5url, '商品图片五(宽度320px~640px)' %>
     </td>
     <td class="inputArea">
-      <%= form.text_field :goodspic5url %>
+      <%= form.file_field :goodspic5url %>
     </td>
   </tr>
 </tbody>

@@ -4,7 +4,7 @@
     <tbody>
       <tr>
       <td style="border: none;">
-        商品名称：<br/>
+        商品名称：
         <%= text_field_tag "[good][name]" %>
       </td>
       <td style="border: none;">
@@ -46,7 +46,7 @@
     <% @goods.each do |i| %>
       <tr>
         <td><%= i.name %></td>
-        <td><%= i.customer.name %></td>
+        <td><%= i.customer.try(:name) %></td>
         <td><%= i.price %></td>
         <td><%= i.discountprice %></td>
         <td><%= i.homepageLoc %></td>

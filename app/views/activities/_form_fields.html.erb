@@ -1,0 +1,77 @@
+<tbody>
+  <tr>
+    <td class="labelText">
+      <%= form.label :name, '活动名称' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :name %>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :customerId, '商家' %>
+    </td>
+    <td class="inputArea">
+      <%= form.select :customerId, Customer.all.collect {|p| [ p.name, p.id ] } %>
+      <font color="red">*</font>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :startDate, '活动起始日期' %>
+    </td>
+    <td class="inputArea">
+      <%= form.date_field :startDate %>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :startDate, '活动结束日期' %>
+    </td>
+    <td class="inputArea">
+      <%= form.date_field :endDate %>
+      <font color="red">*</font>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :startDate, '首界面标志' %>
+    </td>
+    <td colspan="3">
+      <select id="homepageLoc" name="homepageLoc" style="width: 20%">
+        <option value=""></option>
+      </select>
+      <input type="button" id="homepagePic" onclick="parent.window.homepagePicShow();" value="示意图">
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :description, '活动介绍' %>
+    </td>
+    <td colspan="3" class="inputArea">
+      <%= form.text_area :description %>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :logoUrl, '活动Logo(640*234px)' %>
+    </td>
+    <td colspan="3" class="inputArea">
+      <%= form.text_field :logoUrl %>
+      <font color="red">*</font>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="labelText">
+      <%= form.label :logoUrl, '海报图片' %>
+    </td>
+    <td colspan="3" class="inputArea">
+      <%= form.text_field :posterUrl %>
+      <font color="red">*</font>
+    </td>
+  </tr>
+
+</tbody>

@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301133352) do
+ActiveRecord::Schema.define(version: 20140302075208) do
+
+  create_table "ACTIVITY", force: true do |t|
+    t.string   "name"
+    t.integer  "customerId"
+    t.date     "startDate"
+    t.date     "endDate"
+    t.text     "description"
+    t.text     "logoUrl"
+    t.text     "posterUrl"
+    t.integer  "mallid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "CUSTOMER", force: true do |t|
     t.string   "name"
@@ -19,51 +32,75 @@ ActiveRecord::Schema.define(version: 20140301133352) do
     t.text     "address"
     t.string   "phone"
     t.text     "description"
-    t.datetime "createDate"
-    t.datetime "lastupdate"
     t.text     "logo1url"
-    t.text     "logo2url"
-    t.boolean  "obsolete"
-    t.string   "homepageLoc"
-    t.integer  "mallid"
+    t.text     "map"
     t.text     "posterUrl"
+    t.boolean  "obsolete"
+    t.integer  "mallid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "CUSTOMERTYPE", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.boolean  "status"
-    t.datetime "createDate"
     t.integer  "mallid"
-  end
-
-  create_table "GOODS", force: true do |t|
-    t.string  "name"
-    t.integer "customerId"
-    t.decimal "price",         precision: 15, scale: 2
-    t.decimal "discountprice", precision: 15, scale: 2
-    t.text    "homepageLoc"
-    t.integer "goodstypeId"
-    t.integer "mallid"
-    t.date    "createDate"
-    t.text    "description"
-    t.text    "goodspic1url"
-    t.text    "goodspic2url"
-    t.text    "goodspic3url"
-    t.text    "goodspic4url"
-    t.text    "goodspic5url"
-  end
-
-  create_table "activities", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "goods_types", force: true do |t|
+  create_table "GATEWAYS", force: true do |t|
+    t.integer  "mallid"
+    t.string   "deviceid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "GOODS", force: true do |t|
+    t.string   "name"
+    t.integer  "customerId"
+    t.decimal  "price",         precision: 15, scale: 2
+    t.decimal  "discountprice", precision: 15, scale: 2
+    t.integer  "goodstypeId"
+    t.integer  "mallid"
+    t.date     "createDate"
+    t.text     "description"
+    t.text     "logo1url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "GOODS_TYPES", force: true do |t|
     t.string  "name"
     t.boolean "status"
     t.integer "weight"
     t.integer "category"
+  end
+
+  create_table "HOMEPAGELOCS", force: true do |t|
+    t.string   "loctype"
+    t.integer  "location"
+    t.integer  "itemid"
+    t.integer  "mallid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "MALLS", force: true do |t|
+    t.string   "name"
+    t.string   "version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "USERS", force: true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.string   "role"
+    t.integer  "mallid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

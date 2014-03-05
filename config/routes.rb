@@ -1,4 +1,5 @@
 Mallms::Application.routes.draw do
+  resources :malls
   resources :customer_types
   resources :customers do
     collection do

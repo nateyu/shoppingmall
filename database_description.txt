@@ -1,0 +1,5 @@
+CUSTOMERTYPE： 商家分类
+  id: 主键，自动增长序列
+  description： 分类描述， TEXT
+  status： 状态，布尔值， TINYINT
+  mallid：商场标识， integer

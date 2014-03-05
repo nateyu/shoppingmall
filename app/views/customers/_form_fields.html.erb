@@ -44,7 +44,8 @@
       <%= form.label :logo2url, '商家地图' %>
     </td>
     <td colspan="3" class="inputArea">
-      <%= form.text_field :logo2url %>
+      <%= form.file_field :logo2url %>
+      <%= image_tag @customer.logo2url %>
       <!-- <input type="file" id="logo2Url" name="logo2Url" title="只能上传png/jpg的图片，宽度*高度=56*68"> -->
       <font color="red">*</font>
     </td>
@@ -64,12 +65,13 @@
       <%= form.label :logo1url, '商家Logo(197*173px)' %>
     </td>
     <td class="inputArea">
-      <%= form.text_field :logo1url %>
+      <%= form.file_field :logo1url %>
+      <%= image_tag @customer.logo1url %>
       <!-- <input type="file" id="logo1Url" name="logo1Url" title="只能上传png/jpg的图片，宽度*高度=197*173"> -->
       <font color="red">*</font>
     </td>
     <td class="labelText">
-      <%= form.label :logo1Url, '首界面标志' %>
+      <%= form.label :homepageLoc, '首界面标志' %>
     </td>
     <td class="">
       <select id="homepageLoc" name="homepageLoc" style="width: 50%">
@@ -84,8 +86,9 @@
       <%= form.label :posterUrl, '商家海报(640*960px)' %>
     </td>
     <td class="inputArea">
-      <%= form.text_field :posterUrl %>
-      <font color="red"></font>
+      <%= form.file_field :posterUrl %>
+      <%= image_tag @customer.posterUrl %>
+      <font color="red">*</font>
     </td>
     <td></td>
     <td></td>
