@@ -1,6 +1,13 @@
 Mallms::Application.routes.draw do
+  post 'login', to: 'sessions#login', as: :login
+  get 'logout', to: 'sessions#logout', as: :logout
+
   resources :malls
+  resources :users
+  resources :gateways
   resources :customer_types
+  resources :home_page_locations
+  
   resources :customers do
     collection do
       post 'search'
@@ -28,7 +35,7 @@ Mallms::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'customer_types#index'
+  root 'sessions#welcome'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

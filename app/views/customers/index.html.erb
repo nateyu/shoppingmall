@@ -8,12 +8,12 @@
           <td style="border: none;">
             <%= select_tag '[customer][typeId]', options_from_collection_for_select(CustomerType.all, 'id', 'name'), include_blank: true %>
           </td>
-          <td style="border: none;">
+          <!-- <td style="border: none;">
             首界面标志：
           </td>
           <td style="border: none;">
-            <%= select_tag '[customer][homepageLoc]', options_from_collection_for_select(Customer.select(:homepageLoc), 'homepageLoc', 'homepageLoc'), include_blank: true %>
-          </td>
+            <%#= select_tag '[customer][homepageLoc]', options_from_collection_for_select(Customer.select(:homepageLoc), 'homepageLoc', 'homepageLoc'), include_blank: true %>
+          </td> -->
           <td style="border: none;">
             状态：
           </td>

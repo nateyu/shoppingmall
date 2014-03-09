@@ -1,0 +1,41 @@
+<tbody>
+  <tr>
+    <td class="labelText">
+      <%= form.label :name, '用户名称' %>
+    </td>
+    <td class="inputArea">
+        <%= form.text_field :name %>
+        <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :role, '角色' %>
+    </td>
+    <td class="inputArea">
+      <%= form.select :role, User::ROLES.invert.to_a %>
+    </td>
+  </tr>
+  <tr>
+    <td class="labelText">
+      <%= form.label :mallid, '商场' %>
+    </td>
+    <td class="inputArea" colspan="3">
+        <%= form.select :mallid, Mall.all.collect { |i| [i.name, i.id]} %>
+    </td>
+  </tr>
+  <tr>
+    <td class="labelText">
+      <%= form.label :password, '密码' %>
+    </td>
+    <td class="inputArea">
+      <%= form.password_field :password %>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :password_confirmation, '密码确认' %>
+    </td>
+    <td class="inputArea">
+      <%= form.password_field :password_confirmation %>
+      <font color="red">*</font>
+    </td>
+  </tr>
+</tbody>

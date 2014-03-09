@@ -1,0 +1,34 @@
+<tbody>
+  <tr>
+    <td class="labelText">
+      <%= form.label :loctype, '类型' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :loctype, style: "width: 85%"%>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :location, '位置' %>
+    </td>
+    <td class="">
+      <%= form.text_field :location, style: "width: 85%"%>
+      <font color="red">*</font>
+    </td>
+  </tr>
+  <tr>
+    <td class="labelText">
+      <%= form.label :weight, '权重' %>
+    </td>
+    <td class="inputArea">
+      <%= form.text_field :weight, style: "width: 85%"%>
+      <font color="red">*</font>
+    </td>
+    <td class="labelText">
+      <%= form.label :category, '分类' %>
+      <font color="red">*</font>
+    </td>
+    <td>
+      <%= form.select :category, GoodsType::CATEGORIES %>
+    </td>
+  </tr>
+</tbody>

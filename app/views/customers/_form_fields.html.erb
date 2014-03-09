@@ -41,11 +41,11 @@
       <font color="red">*</font>
     </td>
     <td class="labelText">
-      <%= form.label :logo2url, '商家地图' %>
+      <%= form.label :map, '商家地图' %>
     </td>
     <td colspan="3" class="inputArea">
-      <%= form.file_field :logo2url %>
-      <%= image_tag @customer.logo2url %>
+      <%= form.file_field :map %>
+      <%= image_tag @customer.map %>
       <!-- <input type="file" id="logo2Url" name="logo2Url" title="只能上传png/jpg的图片，宽度*高度=56*68"> -->
       <font color="red">*</font>
     </td>
@@ -70,15 +70,15 @@
       <!-- <input type="file" id="logo1Url" name="logo1Url" title="只能上传png/jpg的图片，宽度*高度=197*173"> -->
       <font color="red">*</font>
     </td>
-    <td class="labelText">
-      <%= form.label :homepageLoc, '首界面标志' %>
+    <!-- <td class="labelText">
+      <%#= form.label :homepageLoc, '首界面标志' %>
     </td>
     <td class="">
       <select id="homepageLoc" name="homepageLoc" style="width: 50%">
         <option value=""></option>
       </select>
       <input type="button" onclick="parent.window.homepagePicShow();" value="示意图">
-    </td>
+    </td> -->
   </tr>
 
   <tr>

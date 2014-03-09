@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class=" js boxshadow pointerevents placeholder" keydn="true">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>商业百货管理系统</title>
+    <meta name="description" content="Custom Login Form Styling with CSS3">
+    <meta name="keywords" content="css3, login, form, custom, input, submit, button, html5, placeholder">
+    <meta name="author" content="Codrops">
+    <link rel="shortcut icon" href="http://211.154.132.96:8090/favicon.ico"> 
+    <%= stylesheet_link_tag    "user_login", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "jquery-1.10.2.min", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "modernizr", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "jquery.cookie", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "user_login", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+    <style>
+      body {
+        background: #85919a;
+      }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#username").focus();
+      $(document).keypress(function(e){
+          if(e.which == 13 || e.which == 10) { 
+           $("#loginButton").click();
+           }   
+      });
+    });
+    </script>
+    </head>
+    <body style="">
+        <div class="container">
+      <!-- Codrops top bar -->
+            <!--/ Codrops top bar -->
+      <header>
+        <h1>商业百货管理系统</h1>
+        <div class="support-note">
+          <span class="note-ie">Sorry, only modern browsers.</span>
+        </div>
+      </header>
+      <section class="main">
+        <form class="form-2">
+          <h1><span class="log-in">用户登录</span> </h1>
+          <p class="float">
+            <label for="login"><i class="icon-user"></i>用户名</label>
+            <input type="text" id="username" placeholder="请输入用户名" mouseev="true" autocomplete="off" keyev="true" clickev="true" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); padding-right: 0px; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
+          </p>
+          <p class="float">
+            <label for="password"><i class="icon-lock"></i>密码</label>
+            <input type="password" id="password" placeholder="请输入密码" class="showpassword" mouseev="true" autocomplete="off" keyev="true" clickev="true" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); padding-right: 0px; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
+          </p>
+          <p id="loginError" style="line-height:30px; float: left; color:red; display:none;">您输入的用户名或密码有误</p>
+                    <p style="line-height:30px; float: right"><input id="remeberWeek" type="checkbox" checked="checked" style="float:left; margin-top:8px;"><label style="float:left">记住我一周</label></p>
+          <p class="clearfix"> 
+            <input type="button" id="loginButton" value="登录" style="float:right">
+          </p>
+        </form>​​
+      </section>
+        </div>
+        <div class="footer" style="text-align:center">
+  <span>技术支持：<a href="http://runrun.hk/">热望信息  runrun.hk</a></span><span>联系电话：400-103-0101</span>
+</div>
+    
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

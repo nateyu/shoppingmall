@@ -8,13 +8,19 @@
         </tr>
         <tr>
           <th width="100" height="30">
+            用户名
+          </th>
+          <th width="100">
+            角色
+          </th>
+          <th width="100">
             商场名称
           </th>
           <th width="100">
-            版本号
+            添加时间
           </th>
           <th width="100">
-            添加时间
+            修改时间
           </th>
           <th width="100">
             操作
@@ -22,26 +28,32 @@
         </tr>
       </thead>
       <tbody>
-        <% @malls.each do |i| %>
+        <% @users.each do |i| %>
             <tr>
               <td>
                 <%= i.name %>
               </td>
               <td>
-                <%= i.version %>
+                <%= User::ROLES[i.role.to_sym] %>
               </td>
               <td>
-                <%= i.created_at.strftime("%Y-%m-%d") %>
+                <%= i.mall.try(:name) %>
               </td>
               <td>
-                <a href="<%= edit_mall_path(i)%>">修改</a>
+                <%= i.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+              </td>
+              <td>
+                <%= i.updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
+              </td>
+              <td>
+                <a href="<%= edit_user_path(i)%>">修改</a>
                 </td>
             </tr>
         <% end %>
       </tbody>
     </table>
     <div style="width: 90%">
-        <input type="button" value="新增商场" onclick="doSwitchAction2(&#39;/malls/new&#39;)" style="margin-top: 10px; float: right"> 
+        <input type="button" value="添加用户" onclick="doSwitchAction2(&#39;users/new&#39;)" style="margin-top: 10px; float: right"> 
     </div>
-    <div id="dialog" title="商场管理">
+    <div id="dialog" title="用户管理">
     </div>

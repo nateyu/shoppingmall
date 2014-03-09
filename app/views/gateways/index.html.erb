@@ -1,0 +1,47 @@
+<br>
+<table border="0" id="listTable" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding-left: 8px; font-size: 14px; background-color: darkgray; color: white" colspan="6">
+        盒子列表
+      </th>
+    </tr>
+    <tr>
+      <th width="100" height="30">
+        商场名称
+      </th>
+      <th width="100">
+        设备号
+      </th>
+      <th width="100">
+        添加时间
+      </th>
+      <th width="100">
+        操作
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gateways.each do |i| %>
+        <tr>
+          <td>
+            <%= i.mall.try(:name) %>
+          </td>
+          <td>
+            <%= i.deviceid %>
+          </td>
+          <td>
+            <%= i.created_at %>
+          </td>
+          <td>
+            <a href="<%= edit_gateway_path(i)%>">修改</a>
+            </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<div style="width: 90%">
+    <input type="button" value="新增盒子" onclick="doSwitchAction2(&#39;/gateways/new&#39;)" style="margin-top: 10px; float: right"> 
+</div>
+<div id="dialog" title="盒子管理">
+</div>
