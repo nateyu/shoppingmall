@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140302075208) do
     t.boolean "status"
     t.integer "weight"
     t.integer "category"
+    t.integer "mallid"
   end
 
   create_table "HOMEPAGELOCS", force: true do |t|

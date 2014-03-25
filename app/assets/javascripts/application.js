@@ -11,8 +11,8 @@
 // about supported directives.
 //
 
-//= require jquery
-//= require jquery_ujs
+// = require jquery
+// = require jquery_ujs
 // = require jquery-ui-1.10.3.custom.min
 // = require mallms_common
 // = require turbolinks
