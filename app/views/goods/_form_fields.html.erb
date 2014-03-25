@@ -33,19 +33,17 @@
 
   <tr>
     <td class="labelText">
-      <%= form.label :homepageLoc, '首界面标志' %>
-    </td>
-    <td>
-      <select id="homepageLoc" name="homepageLoc" style="width: 50%">
-        <option value=""></option>
-      </select>
-      <input type="button" onclick="parent.window.homepagePicShow();" value="示意图">
-    </td>
-    <td class="labelText">
       <%= form.label :goodstypeId, '商品分类' %>
     </td>
-    <td>
+    <td class="inputArea">
       <%= form.select :goodstypeId, GoodsType.all.collect {|p| [ p.name, p.id ] } %>
+    </td>
+    <td class="labelText">
+      <%= form.label :logo1url, '商品Logo' %>
+    </td>
+    <td class="inputArea">
+      <%= form.file_field :logo1url %>
+      <%= image_tag @good.logo1url %>
     </td>
   </tr>
 
@@ -55,44 +53,6 @@
     </td>
     <td colspan="3" class="inputArea">
       <%= form.text_area :description %>
-    </td>
-  </tr>
-
-  <tr>
-    <td class="labelText">
-      <%= form.label :goodspic1url, '商品图片一(宽度320px~640px)' %>
-    </td>
-    <td class="inputArea">
-      <%= form.file_field :goodspic1url %>
-    </td>
-    <td class="labelText">
-      <%= form.label :goodspic2url, '商品图片二(宽度320px~640px)' %>
-    </td>
-    <td class="inputArea">
-      <%= form.file_field :goodspic2url %>
-    </td>
-  </tr>
-
-  <tr>
-    <td class="labelText">
-      <%= form.label :goodspic3url, '商品图片三(宽度320px~640px)' %>
-    </td>
-    <td class="inputArea">
-      <%= form.file_field :goodspic3url %>
-    </td>
-    <td class="labelText">
-      <%= form.label :goodspic4url, '商品图片四(宽度320px~640px)' %>
-    </td>
-    <td class="inputArea">
-      <%= form.file_field :goodspic4url %>
-    </td>
-  </tr>
-  <tr>
-    <td class="labelText">
-      <%= form.label :goodspic5url, '商品图片五(宽度320px~640px)' %>
-    </td>
-    <td class="inputArea">
-      <%= form.file_field :goodspic5url %>
     </td>
   </tr>
 </tbody>

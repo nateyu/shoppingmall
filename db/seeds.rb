@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Mall.create(name: '合肥百大鼓楼名品中心管理系统', version: '0.0.1')
+User.create(name: 'admin', password: '123456', role: 'admin', mallid: 1)

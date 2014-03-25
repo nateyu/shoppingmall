@@ -1,3 +1,4 @@
+<% breadcrumb('商场管理', '商场列表') %>
 <br>
     <table border="0" id="listTable" cellspacing="0" cellpadding="0">
       <thead>
@@ -31,7 +32,7 @@
                 <%= i.version %>
               </td>
               <td>
-                <%= i.created_at.strftime("%Y-%m-%d") %>
+                <%= i.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
               </td>
               <td>
                 <a href="<%= edit_mall_path(i)%>">修改</a>

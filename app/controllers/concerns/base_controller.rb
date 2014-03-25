@@ -7,8 +7,9 @@ module BaseController
   
   module ClassMethods
 
-    def model_to_save(value)
-      define_method(:model_to_save) { value } 
+    def model_to_save value, filter=nil
+      define_method(:model_to_save) { value }
+      define_method(:filter_by_mall) { filter.try('[]', :filter_by_mall) }
     end
 
   end
@@ -55,10 +56,16 @@ module BaseController
     obj_var = ('@' + class_str).to_sym
 
     obj_value = case action_name
-                when 'index'                             then model_to_save.all
-                when 'show', 'edit', 'update', 'destroy' then model_to_save.find params[:id]
-                when 'new'                               then model_to_save.new
-                when 'create'                            then model_to_save.new params[class_str.to_sym]
+                when 'index'
+                  filter_by_mall ? model_to_save.where(mall: current_mall) : model_to_save.all
+                when 'show', 'edit', 'update', 'destroy'
+                  model_to_save.find params[:id]
+                when 'new'
+                  model_to_save.new
+                when 'create'
+                  attrs = { mallid: current_mall.id }
+                  attrs.merge! params[class_str.to_sym] if filter_by_mall
+                  model_to_save.new attrs
                 end
    
     [obj_var, obj_value]

@@ -1,3 +1,4 @@
+<% breadcrumb('商品管理', '新增商品') %>
 <br>
 <%= form_tag '/goods/search' do %>
   <table border="0" cellspacing="0" cellpadding="0" style="border: none; margin-bottom: 10px;width: 60%;">
@@ -10,10 +11,6 @@
       <td style="border: none;">
         商家：
         <%= select_tag '[good][customerId]', options_from_collection_for_select(Customer.all, 'id', 'name'), include_blank: true %>
-      </td>
-      <td style="border: none;">
-        首界面标志：
-        <%= select_tag '[good][homepageLoc]', options_from_collection_for_select(Good.select(:homepageLoc), 'homepageLoc', 'homepageLoc'), include_blank: true %>
       </td>
       <td style="border: none;">
         <%= submit_tag "查询" %>
@@ -38,7 +35,6 @@
       <th width="100">商家</th>
       <th width="80">原价</th>
       <th width="80">优惠价</th>
-      <th width="80">首界面标志</th>
       <th width="80">操作</th>
     </tr>
   </thead>
@@ -49,7 +45,6 @@
         <td><%= i.customer.try(:name) %></td>
         <td><%= i.price %></td>
         <td><%= i.discountprice %></td>
-        <td><%= i.homepageLoc %></td>
         <td>
           <%= link_to '修改', edit_good_path(i) %>
           <%= link_to("删除", good_path(i), method: :delete, data: { confirm: '您确定要删除吗?' } ) %>

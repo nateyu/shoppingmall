@@ -1,3 +1,4 @@
+<% breadcrumb('盒子管理', '盒子列表') %>
 <br>
 <table border="0" id="listTable" cellspacing="0" cellpadding="0">
   <thead>
@@ -31,7 +32,7 @@
             <%= i.deviceid %>
           </td>
           <td>
-            <%= i.created_at %>
+            <%= i.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
           </td>
           <td>
             <a href="<%= edit_gateway_path(i)%>">修改</a>

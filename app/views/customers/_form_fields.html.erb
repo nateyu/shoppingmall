@@ -70,18 +70,6 @@
       <!-- <input type="file" id="logo1Url" name="logo1Url" title="只能上传png/jpg的图片，宽度*高度=197*173"> -->
       <font color="red">*</font>
     </td>
-    <!-- <td class="labelText">
-      <%#= form.label :homepageLoc, '首界面标志' %>
-    </td>
-    <td class="">
-      <select id="homepageLoc" name="homepageLoc" style="width: 50%">
-        <option value=""></option>
-      </select>
-      <input type="button" onclick="parent.window.homepagePicShow();" value="示意图">
-    </td> -->
-  </tr>
-
-  <tr>
     <td class="labelText">
       <%= form.label :posterUrl, '商家海报(640*960px)' %>
     </td>
@@ -90,7 +78,5 @@
       <%= image_tag @customer.posterUrl %>
       <font color="red">*</font>
     </td>
-    <td></td>
-    <td></td>
-  </tr> 
+  </tr>
 </tbody>

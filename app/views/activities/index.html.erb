@@ -1,3 +1,4 @@
+<% breadcrumb('活动管理', '活动列表') %>
 <br/>
 <%= form_tag '/activities/search' do %>
   <table border="0" cellspacing="0" cellpadding="0" style="border: none; margin-bottom: 10px;">
@@ -6,10 +7,6 @@
         <td style="border: none;">
           商家：
           <%= select_tag '[activity][customerId]', options_from_collection_for_select(Customer.all, 'id', 'name'), include_blank: true %>
-        </td>
-        <td style="border: none;">
-          首界面标志：
-          <%= select_tag '[activity][homepageLoc]', options_from_collection_for_select(Activity.select(:homepageLoc), 'homepageLoc', 'homepageLoc'), include_blank: true %>
         </td>
         <td style="border: none;">
           活动名称：
@@ -43,7 +40,6 @@
       <th width="100">商家</th>
       <th width="120">活动起始日期</th>
       <th width="120">活动结束日期</th>
-      <th width="120">首界面标志</th>
       <th width="80">操作</th>
     </tr>
   </thead>
@@ -54,7 +50,6 @@
         <td><%= i.customer.try(:name) %></td>
         <td><%= i.startDate %></td>
         <td><%= i.endDate %></td>
-        <td><%= i.homepageLoc %></td>
         <td>
           <%= link_to '修改', edit_activity_path(i) %>
           <%= link_to("删除", activity_path(i), method: :delete, data: { confirm: '您确定要删除吗?' } ) %>

@@ -6,7 +6,11 @@ Mallms::Application.routes.draw do
   resources :users
   resources :gateways
   resources :customer_types
-  resources :home_page_locations
+  resources :home_page_locations do
+    collection do
+      get 'search_locations'
+    end
+  end
   
   resources :customers do
     collection do

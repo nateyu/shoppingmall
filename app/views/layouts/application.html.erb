@@ -182,8 +182,7 @@
           <%= image_tag "04.gif" %>
           <label id="rootName" style="display: none;">
           </label>
-          <label id="parentMenu">商家分类 &gt; </label>
-          <span id="currWin">商家分类列表</span>
+          <%= yield :breadcrumb %>
         </div>
         <div id="main-content" class="main-content">
           <%= yield %>

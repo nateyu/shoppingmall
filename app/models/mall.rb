@@ -7,4 +7,5 @@ class Mall < ActiveRecord::Base
   has_many  :customer_types, foreign_key: 'mallid'
   has_many  :good_types, foreign_key: 'mallid'
   has_many  :goods, foreign_key: 'mallid'
+  has_many  :homepagelocs, foreign_key: 'mallid'
 end

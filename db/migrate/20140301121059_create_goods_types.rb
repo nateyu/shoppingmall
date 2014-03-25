@@ -5,6 +5,7 @@ class CreateGoodsTypes < ActiveRecord::Migration
       t.boolean :status
       t.integer :weight
       t.integer :category
+      t.integer :mallid
     end
   end
 end
