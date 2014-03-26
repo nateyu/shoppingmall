@@ -84,3 +84,17 @@ function homePageLocationSelect(type) {
 			}
 	  });
 }
+
+function pack_resources () {
+  $('#loading').show();
+	$.ajax({ 
+	  	url: '/gateways/pack_resources',
+  		type: 'POST',
+  		beforeSend: function(xhr) {
+  			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+  		},
+			success: function(data) {
+				alert('更新成功！');
+			}
+	}).complete(function(){ $('#loading').hide(); });
+}

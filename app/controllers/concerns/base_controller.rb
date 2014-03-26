@@ -63,8 +63,8 @@ module BaseController
                 when 'new'
                   model_to_save.new
                 when 'create'
-                  attrs = { mallid: current_mall.id }
-                  attrs.merge! params[class_str.to_sym] if filter_by_mall
+                  attrs = params[class_str.to_sym]
+                  attrs.merge!({ mallid: current_mall.id }) if filter_by_mall
                   model_to_save.new attrs
                 end
    

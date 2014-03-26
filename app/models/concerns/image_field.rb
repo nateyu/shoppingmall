@@ -13,7 +13,9 @@ module ImageField
   private
   def save_image_fields
     get_image_fields.each do |field|
-      upload_file(field, self[field])
+      if self.send("#{field.to_s}_changed?")
+        upload_file(field, self[field])
+      end
     end
   end
 
@@ -22,13 +24,13 @@ module ImageField
       content = upload.read
       name = Digest::MD5.hexdigest(content) + sanitize_filename(upload.original_filename)
       
-      path = Rails.root.join('public', 'uploads', name)
+      path = Rails.root.join('public', 'images', 'uploads', name)
       # write the file
       unless File.exist? path
         File.open(path, 'wb') { |f| f.write(content) }  
       end
     
-      self[field] = File.join("/uploads", name)
+      self[field] = File.join("uploads", name)
     end 
   end
 

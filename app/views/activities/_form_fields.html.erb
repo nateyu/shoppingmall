@@ -46,19 +46,18 @@
     <td class="labelText">
       <%= form.label :logoUrl, '活动Logo(640*234px)' %>
     </td>
-    <td colspan="3" class="inputArea">
-      <%= form.text_field :logoUrl %>
+    <td class="inputArea">
+      <%= form.file_field :logoUrl %>
       <font color="red">*</font>
-    </td>
-  </tr>
-
-  <tr>
+      <%= image_tag @activity.logoUrl %>
+    </td>  
     <td class="labelText">
       <%= form.label :logoUrl, '海报图片' %>
     </td>
-    <td colspan="3" class="inputArea">
-      <%= form.text_field :posterUrl %>
+    <td class="inputArea">
+      <%= form.file_field :posterUrl %>
       <font color="red">*</font>
+      <%= image_tag @activity.posterUrl %>
     </td>
   </tr>
 

@@ -4,7 +4,11 @@ Mallms::Application.routes.draw do
 
   resources :malls
   resources :users
-  resources :gateways
+  resources :gateways do
+    collection do
+      post 'pack_resources'
+    end
+  end
   resources :customer_types
   resources :home_page_locations do
     collection do
