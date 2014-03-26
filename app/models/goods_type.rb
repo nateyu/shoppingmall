@@ -1,4 +1,5 @@
 class GoodsType < ActiveRecord::Base
+  self.table_name = 'GOODS_TYPES'
   has_many :goods, foreign_key: 'goodstypeId'
   belongs_to :mall, foreign_key: 'mallid'
   

@@ -1,4 +1,5 @@
 class Homepageloc < ActiveRecord::Base
+  self.table_name = 'HOMEPAGELOCS'
   belongs_to :mall, foreign_key: 'mallid'
   
   LOCTYPE = [['商家', 'A'], ['商品', 'B'], ['活动', 'C']]
