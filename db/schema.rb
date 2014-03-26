@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20140302075208) do
     t.datetime "updated_at"
   end
 
-  create_table "MALLS", force: true do |t|
+  create_table "MALL", force: true do |t|
     t.string   "name"
     t.string   "version"
     t.datetime "created_at"
