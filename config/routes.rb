@@ -1,7 +1,7 @@
 Mallms::Application.routes.draw do
   post 'login', to: 'sessions#login', as: :login
   get 'logout', to: 'sessions#logout', as: :logout
-
+  get 'mallms/downLoad', to: 'gateways#fetch_packages'
   resources :malls
   resources :users
   resources :gateways do
