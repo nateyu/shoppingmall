@@ -12,16 +12,16 @@ class GatewaysController < ApplicationController
   def fetch_packages
     gateway = Gateway.find_by_deviceid params[:mallid]
     file = gateway ? gateway.mall.get_latest_resources : []
-    
+  
     unless file.empty?
-      case params[:action]
-      when 20
-        render :text => file[0].basename
-      when 21
+      case request.query_parameters[:action]
+      when '20'
+        render :text => File.basename(file[0])
+      when '21'
         send_file file.first
       end
     else
-      render :status => 404
+      render text: '',  status: :not_found
     end
   end
 end
