@@ -17,16 +17,23 @@ class Mall < ActiveRecord::Base
       password = config["password"]
       mallid   = self['id']
       images   = Rails.root.join('public', 'images')
-      output   = Rails.root.join('packages', "mall_#{mallid}_#{Time.now.to_i}.tar.gz")
+      output   = Rails.root.join('packages')
+      output_file = output.join("mall_#{mallid}_#{Time.now.to_i}.tar.gz")
       jar_file = Rails.root.join('bin', 'pack', 'pack.jar')
 
       FileUtils.mkdir_p images
       FileUtils.mkdir_p Rails.root.join('packages')
-      system("java -jar #{jar_file} -db #{database} -user #{username} -pass #{password} -mall #{mallid} -image #{images}  -output #{output}")
+      FileUtils.rm Dir.glob(output.join("mall_#{mallid}_*.tar.gz")), :force => true
+      system("java -jar #{jar_file} -db #{database} -user #{username} -pass #{password} -mall #{mallid} -image #{images}  -output #{output_file}")
     rescue Exception => e
       Rails.logger.info '=== pack resources failed ===='
       Rails.logger.info e
       return false
     end
+  end
+
+  def get_latest_resources
+    mallid   = self['id']
+    Dir.glob Rails.root.join("packages", "mall_#{mallid}_*.tar.gz")
   end
 end
