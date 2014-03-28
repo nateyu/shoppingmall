@@ -23,11 +23,13 @@ module ImageField
     unless upload.nil?
       content = upload.read
       name = Digest::MD5.hexdigest(content) + sanitize_filename(upload.original_filename)
-      
-      path = Rails.root.join('public', 'images', 'uploads', name)
+      path = Rails.root.join('public', 'images', 'uploads')
+      file = path.join(name)
+
+      FileUtils.mkdir_p path
       # write the file
-      unless File.exist? path
-        File.open(path, 'wb') { |f| f.write(content) }  
+      unless File.exist? file
+        File.open(file, 'wb') { |f| f.write(content) }  
       end
     
       self[field] = File.join("uploads", name)
