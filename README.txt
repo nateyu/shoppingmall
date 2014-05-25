@@ -47,10 +47,10 @@ create database, command:
 == Database initialization
 run command:
      rake db:migrate
-     rake db:seed   #just run the first time import to default 'admin' user account
+     rake db:seed   #just run the first time to import default 'admin' user account
 
 == Deployment instructions
-1. make sure you are in root directory of application
+1. make sure you are in the root directory of application
 2. compile all static resources in production environment. command:
      rake assets:precompile
 
